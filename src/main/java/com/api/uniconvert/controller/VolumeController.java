@@ -11,21 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.uniconvert.model.ConversionRequest;
 import com.api.uniconvert.model.ConversionResponse;
-import com.api.uniconvert.service.TemperatureService;
+import com.api.uniconvert.service.VolumeService;
 
 @RestController
-@RequestMapping("api/v1/temperature")
-public class TempatureController {
+@RequestMapping("api/v1/volume")
+public class VolumeController {
 	@Autowired
-	TemperatureService tempService;
-
+	VolumeService volService;
+	
 	@PostMapping("/convert")
-	public ConversionResponse convertTemperature(@RequestBody ConversionRequest request) {
-		return tempService.convertTemperature(request);
+	public ConversionResponse convertVolume(@RequestBody ConversionRequest request) {
+		return volService.convertVolume(request);
 	}
 	
 	@GetMapping("/all")
-	public List<ConversionResponse> getAllTemperatureConversion(){
-		return tempService.getAllTemperatureConversion();
+	public List<ConversionResponse> getAllVolumeConversion(){
+		return volService.getAllVolumeConversion();
 	}
 }

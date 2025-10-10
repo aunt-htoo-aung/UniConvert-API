@@ -11,21 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.uniconvert.model.ConversionRequest;
 import com.api.uniconvert.model.ConversionResponse;
-import com.api.uniconvert.service.TemperatureService;
+import com.api.uniconvert.service.LengthService;
 
 @RestController
-@RequestMapping("api/v1/temperature")
-public class TempatureController {
+@RequestMapping("api/v1/length")
+public class LengthController {
 	@Autowired
-	TemperatureService tempService;
+	LengthService lenService;
 
 	@PostMapping("/convert")
 	public ConversionResponse convertTemperature(@RequestBody ConversionRequest request) {
-		return tempService.convertTemperature(request);
+		return lenService.convertLength(request);
 	}
 	
 	@GetMapping("/all")
 	public List<ConversionResponse> getAllTemperatureConversion(){
-		return tempService.getAllTemperatureConversion();
+		return lenService.getAllLengthConversion();
 	}
 }

@@ -5,20 +5,20 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ConversionResponse {
-	private ConversionUnit from;
-	private ConversionUnit to;
+	private String from;
+	private String to;
 	private double value;
 	private double result;
-	public ConversionUnit getFrom() {
+	public String getFrom() {
 		return from;
 	}
-	public void setFrom(ConversionUnit from) {
+	public void setFrom(String from) {
 		this.from = from;
 	}
-	public ConversionUnit getTo() {
+	public String getTo() {
 		return to;
 	}
-	public void setTo(ConversionUnit to) {
+	public void setTo(String to) {
 		this.to = to;
 	}
 	public double getValue() {
@@ -33,13 +33,12 @@ public class ConversionResponse {
 	public void setResult(double result) {
 		this.result = result;
 	}
-	public ConversionResponse(ConversionUnit from, ConversionUnit to, double value, double result) {
+	public ConversionResponse(String from, String to, double value, double result) {
 		super();
 		this.from = from;
 		this.to = to;
 		this.value = value;
 		this.result = result;
 	}
-	
 	
 }
